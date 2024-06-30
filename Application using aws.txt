@@ -1,0 +1,24 @@
+Building an app using AWS
+App name:- Employee Directory using the services of AWS 
+Now it will be build from scratch 
+1. Firstly i have created role using IAM roles
+   Roles assigned are S3 full access and dynamodb full access and named it:- EmployeeWebapprole
+2. Then i created a user named EC2 user and assigned that with Full EC2 policies 
+   grouped that user with a group that created at that time named EC2Admins and assigned 
+   that group a policy known EC2Full access because its best practice to assign policy 
+   to group directly not to assign every particular user.
+3. Launched an instance named Employee_Application assigning them Basic necessaties like VPC, Key_pair for ssh
+   Cpu etc. Then Provided with the codein usertext at time of creating the instance
+   #!/bin/bash -ex
+   wget https://aws-tc-largeobjects.s3-us-west-2.amazonaws.com/DEV-AWS-MO-GCNv2/FlaskApp.zip
+   unzip FlaskApp.zip
+   cd FlaskApp/
+   yum -y install python3-pip
+   pip install -r requirements.txt
+   yum -y install stress
+   export PHOTOS_BUCKET=kauserbucket
+   export AWS_DEFAULT_REGION=us-west-2
+   export DYNAMO_MODE=on
+   FLASK_APP=application.py /usr/local/bin/flask run --host=0.0.0.0 --port=80
+
+4. 
