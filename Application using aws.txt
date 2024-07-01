@@ -21,4 +21,6 @@ Now it will be build from scratch
    export DYNAMO_MODE=on
    FLASK_APP=application.py /usr/local/bin/flask run --host=0.0.0.0 --port=80
 
-4. 
+4. After this created the VPC particulary for that application only i.e. customized VPC built from the console
+   Then created 2 subnets i.e. public subnet and private subnet for the application
+    Created a Internet gateway for the VPC to communicate and attach it to the VPC 
